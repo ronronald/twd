@@ -4,4 +4,4 @@
 .DS_Store
 *.jpg
 *.png
-*.sqlite3
+db.sqlite3
