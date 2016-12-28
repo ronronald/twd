@@ -1,4 +1,5 @@
-{% extends "rango/base.html" %}
+{# {% extends "rango/base.html" %} #}
+{% extends "rango/base_bootstrap.html" %}
 {% load staticfiles %}
 
 {% block title_block %}
@@ -9,5 +10,12 @@
     <h1>About Rango</h1>
     <img src="{% static "images/rango.jpg" %}" alt="Picture of Rango">
     <p>This tutorial has been put together by Rango</p>
+    <button class="btn btn-primary" onclick="alert('You clicked the button using JS.');">JS Button</button>
+    <button class="btn btn-primary" id="about-btn">JQuery Button</button>
+    <p>This is an example.</p>
+    <p>This is another example.</p>
+    <p>User: {{ act_user }}</p>
+    <p>Visits: {{ visits }}</p>
+    <p>Meta: {{ meta }}</p>
     <img src="{{ MEDIA_URL }}cat.png" alt="Picutre of a cat">
 {% endblock body_block %} 

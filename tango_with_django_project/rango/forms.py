@@ -1,5 +1,6 @@
 from django import forms
-from .models import Category, Page
+from .models import Category, Page, UserProfile
+from django.contrib.auth.models import User
 
 class CategoryForm(forms.ModelForm):
     name = forms.CharField(max_length=128, help_text="please enter the category")
@@ -27,3 +28,19 @@ class PageForm(forms.ModelForm):
     class Meta:
         model = Page
         exclude = ('category',)
+
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password')
+
+class UserProfileForm(forms.ModelForm):
+    website = forms.URLField(required=True)
+    picture = forms.ImageField(required=False)
+
+    class Meta:
+        model = UserProfile
+        exclude = ('user', )
+    

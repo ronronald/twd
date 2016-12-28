@@ -1,0 +1,11 @@
+{# {% extends "rango/base.html" %} #}
+{% extends "rango/base_bootstrap.html" %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Restricted
+{% endblock title_block %}
+
+{% block body_block %}
+    <p>since you are logged in, you can see this text!</p>
+{% endblock body_block %}

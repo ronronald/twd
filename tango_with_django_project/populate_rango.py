@@ -27,22 +27,21 @@ def populate():
     cats = {
         "Python": {"pages": python_pages},
         "Django": {"pages": django_pages},
-        "Other Frameworks": {"pages": other_pages}
-    }
-    cat_views = {
-        "Python": 128,
-        "Django": 64,
-        "Other Frameworks": 32
+        "Other Frameworks": {"pages": other_pages},
+        "Perl":{"pages": []},
+        "PHP": {"pages": []},
+        "Prolog": {"pages": []},
+        "PostScript": {"pages": []},
     }
 
-    cat_likes = {
-        "Python": 64,
-        "Django": 32,
-        "Other Frameworks": 16
-    }
+    # cat_likes = {
+    #     "Python": 64,
+    #     "Django": 32,
+    #     "Other Frameworks": 16
+    # }
 
     for cat, cat_data in cats.items():
-        c = add_cat(cat, cat_views[cat], cat_likes[cat])
+        c = add_cat(cat, randint(0, 100), 0)
         for p in cat_data["pages"]:
             add_page(c, p["title"], p["url"])
 
